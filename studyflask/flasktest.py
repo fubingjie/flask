@@ -29,7 +29,7 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[Flasky]'
-app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin <flasky@example.com>'
+app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin <15770905735@163.com>'
 app.config['FLASKY_ADMIN'] = os.environ.get('FLASKY_ADMIN')
 
 
@@ -44,7 +44,6 @@ class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
-    # users = db.relationship('User', backref='role')
     users = db.relationship('User', backref='role', lazy='dynamic')
 
     def __repr__(self):
